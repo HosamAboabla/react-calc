@@ -25,7 +25,7 @@ class App extends Component{
     if(['/','*','-','+'].indexOf(symbol) > -1 ){
       let {current , previous} = this.state
       if(previous.length > 0){
-        previous.push( eval(String(previous[previous.length -1 ] + this.state.sign + current)) )
+        previous.push( String(eval(String(previous[previous.length -1 ] + this.state.sign + current)) ))
         this.setState({current:'', sign:''})
       }else{
         previous.push(this.state.current)
